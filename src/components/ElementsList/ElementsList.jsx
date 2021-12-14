@@ -1,15 +1,20 @@
+import { ItemTypes } from '../../utils/ItemTypes.js';
 import { ElementCard } from '../ElementCard/ElementCard.jsx';
 import e from './ElementsList.module.css';
+
+let elements = [
+    ItemTypes.DIV,
+    ItemTypes.SECTION
+]
 
 export const ElementsList = () => {
     return (
         <div className={e.wrapper}>
             <div className={e.list}>
-                <ElementCard id={Math.floor(Math.random()*1000)}></ElementCard>
-                <ElementCard id={Math.floor(Math.random()*1000)}></ElementCard>
-                <ElementCard id={Math.floor(Math.random()*1000)}></ElementCard>
-                <ElementCard id={Math.floor(Math.random()*1000)}></ElementCard>
-
+                {elements.map((el, index) => {
+                    return(<ElementCard key={Math.floor(Math.random()*1000)} id={index} type={el}></ElementCard>)
+                })}
+            
             </div>
         </div>
     )
