@@ -7,7 +7,8 @@ export const ElementCard = ({id, type}) => {
         type: type,
 		item: {
             id: id,
-            type: type
+            type: type,
+            unique_key: false
 		}
 	});
 

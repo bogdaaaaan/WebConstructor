@@ -1,10 +1,10 @@
-import d from './Div.module.css';
+import s from './Section.module.css';
 import { useDrop } from 'react-dnd';
 import { useState } from 'react';
 import { ItemTypes } from '../../utils/ItemTypes.js';
 import { P } from '../P/P';
 
-export const Div = () => {
+export const Section = () => {
     const [items, setItems] = useState([]);
 
     const [, drop] = useDrop({
@@ -15,10 +15,10 @@ export const Div = () => {
 	})
     
     return (
-        <div ref={drop} className={d.wrapper}>
+        <section ref={drop} className={s.wrapper}>
             {items.map(el => {
-                if (el.type === ItemTypes.P) return(<P key={Math.floor(Math.random()*1000)}>aboba</P>);
+                if (el.type === ItemTypes.P) return(<P key={Math.floor(Math.random()*1000)}></P>);
             })}
-        </div>
+        </section>
     )
 }

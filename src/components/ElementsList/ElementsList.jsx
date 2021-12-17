@@ -4,7 +4,8 @@ import e from './ElementsList.module.css';
 
 let elements = [
     ItemTypes.DIV,
-    ItemTypes.SECTION
+    ItemTypes.SECTION,
+    ItemTypes.P
 ]
 
 export const ElementsList = () => {

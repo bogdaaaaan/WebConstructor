@@ -1,4 +1,5 @@
 export const ItemTypes = {
 	DIV: 'div',
-	SECTION: 'section'
+	SECTION: 'section',
+	P: 'p'
 };
