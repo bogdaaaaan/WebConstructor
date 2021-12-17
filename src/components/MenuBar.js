@@ -41,6 +41,7 @@ const MenuBar = ({
         const content = JSON.stringify(json());
         const file = new Blob([content], { type: 'application/json' });
         const link = URL.createObjectURL(file);
+        localStorage.setItem('last-page', content);
         setSaveLink(link);
         setSaving(true);
     }
