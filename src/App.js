@@ -1,16 +1,26 @@
-import './App.css';
-import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
-import { Constructor } from './pages/Constructor/Constructor.jsx';
+import DemoBuilder from './components/DemoBuilder';
+import BuilderGrid from './components/layout/BuilderGrid';
+import { useEffect } from 'react';
 
-function App() {
+const App = () => {
+    useEffect(() => {
+        window.addEventListener('beforeunload', alertUser);
+        return () => {
+            window.removeEventListener('beforeunload', alertUser);
+        };
+    }, []);
+    const alertUser = e => {
+        e.preventDefault();
+        e.returnValue = '';
+    };
+
     return (
-        <div className='App'>
-            <DndProvider backend={HTML5Backend}>
-                <Constructor></Constructor>
-            </DndProvider>
+        <div>
+            <DemoBuilder>
+                <BuilderGrid />
+            </DemoBuilder>
         </div>
     );
-}
+};
 
 export default App;
