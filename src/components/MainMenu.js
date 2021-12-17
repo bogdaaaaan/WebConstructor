@@ -46,8 +46,8 @@ const MainMenu = () => {
                 <Button onClick={load_file}>Load Project From File</Button>
                 <Button onClick={load_storage}>Load Project From Backups</Button>
                 {localLayouts ? <div>
-                    {localLayouts.length === 0 ? 'There is no backups for projects' : 
-                        localLayouts.map((el, indx) => {
+                    
+                    {localLayouts.map((el, indx) => {
                             return (<>
                                 <div key={indx}>Previously worked layout: {JSON.parse(el).root}</div>
                                 <Button onClick={() => {
@@ -59,9 +59,8 @@ const MainMenu = () => {
                                     } 
                                 }}>Select {JSON.parse(el).root}</Button>
                                 </>)
-                        })
-                    }
-                </div> : ''}
+                        })}
+                </div> : 'There is no backups for projects'}
             </div>
             
             : ''}
