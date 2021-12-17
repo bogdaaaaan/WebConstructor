@@ -4,9 +4,11 @@ import { Builder, item, branch } from "build-ui";
 
 const DemoBuilder = ({
     children,
+    demo
 }) => {
     // Initial Tree Default
-    const Demo = branch(item({
+
+    const Demo = demo ? demo : branch(item({
         type: 'Canvas',
         props: {
             style: {

@@ -1,5 +1,4 @@
-import DemoBuilder from './components/DemoBuilder';
-import BuilderGrid from './components/layout/BuilderGrid';
+import MainMenu from './components/MainMenu';
 import { useEffect } from 'react';
 
 const App = () => {
@@ -16,9 +15,9 @@ const App = () => {
 
     return (
         <div>
-            <DemoBuilder>
-                <BuilderGrid />
-            </DemoBuilder>
+          <MainMenu>
+            
+          </MainMenu>
         </div>
     );
 };
