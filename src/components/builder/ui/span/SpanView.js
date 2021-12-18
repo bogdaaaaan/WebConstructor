@@ -3,14 +3,14 @@ import {DnDBuilderHOC} from 'build-ui'
 import useDemoEditor from "../../../../hooks/useDemoEditor";
 import useDemoStyler from '../../../../hooks/useDemoStyler';
 import Resizable from '../../../resize/Resizable';
-import Text from './Text';
-import TextInput from './TextInput';
-import useStyle from './style/TextView';
+import Span from './Span';
+import SpanInput from './SpanInput';
+import useStyle from './style/SpanView';
 
-const BuilderText = DnDBuilderHOC(Resizable(Text));
-const BuilderTextInput = DnDBuilderHOC(Resizable(TextInput));
+const BuilderSpan = DnDBuilderHOC(Resizable(Span));
+const BuilderSpanInput = DnDBuilderHOC(Resizable(SpanInput));
 
-const TextPreview = ({
+const SpanView = ({
     id,
     ...props
 }) => {
@@ -34,12 +34,12 @@ const TextPreview = ({
         selected: selected,
         fixed: editor.meta.fixed,
     });
-    const BuilderTextComponent = (
+    const BuilderSpanComponent = (
         !editing 
-        ? BuilderText 
-        : BuilderTextInput
+        ? BuilderSpan 
+        : BuilderSpanInput
     );
-    return <BuilderTextComponent
+    return <BuilderSpanComponent
         // DnD Props
         onDragStart = {!editor.meta.fixed && editor.handlePositionedDragStart}
         onDragEnd = {!editor.meta.fixed && editor.handleDragEnd}
@@ -56,9 +56,9 @@ const TextPreview = ({
         // Other Props
         className = {classes.view}
         onClick = {handleSelect}
-        // Text Props
+        // Span Props
         {...(!editing && props)}
-        // Text Input Props
+        // Span Input Props
         {...(editing && {
             name: 'text',
             value: props.text,
@@ -69,4 +69,4 @@ const TextPreview = ({
 
 }
 
-export default TextPreview;
+export default SpanView;

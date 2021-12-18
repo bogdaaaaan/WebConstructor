@@ -1,6 +1,5 @@
 import { Panel } from "build-ui";
 import { CanvasPanel } from "./builder/ui/canvas";
-import TextPanel from "./builder/ui/text/TextPanel";
 import SectionPanel from "./builder/ui/section/SectionPanel";
 import ImagePanel from "./builder/ui/image/ImagePanel";
 import ButtonPanel from "./builder/ui/button/ButtonPanel";
@@ -10,12 +9,15 @@ import InputPanel from "./builder/ui/input/InputPanel";
 import DivPanel from "./builder/ui/div/DivPanel";
 import FormPanel from "./builder/ui/form/FormPanel";
 import HeaderPanel from "./builder/ui/header/HeaderPanel";
+import SpanPanel from "./builder/ui/span/SpanPanel";
+import PPanel from "./builder/ui/p/PPanel";
 
 const DemoPanel = props => {
     const view = {
         Canvas: CanvasPanel,
-        Text: TextPanel,
         Header: HeaderPanel,
+        Span: SpanPanel,
+        P: PPanel,
         Section: SectionPanel,
         Div: DivPanel,
         Form: FormPanel,

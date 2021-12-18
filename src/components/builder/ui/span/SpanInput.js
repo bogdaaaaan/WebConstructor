@@ -1,8 +1,8 @@
-import useStyle from './style/TextInput';
+import useStyle from './style/SpanInput';
 import clsx from 'clsx';
 import React from 'react';
 
-const TextInput = React.forwardRef(({
+const SpanInput = React.forwardRef(({
     children,
     className,
     style,
@@ -10,7 +10,7 @@ const TextInput = React.forwardRef(({
 }, ref) => {
     const classes = useStyle(style);
     const classArea = clsx(
-        classes.textInput,
+        classes.spanInput,
         classes.fill
     );
     const classAll = clsx(
@@ -30,4 +30,4 @@ const TextInput = React.forwardRef(({
 
 });
 
-export default TextInput;
+export default SpanInput;

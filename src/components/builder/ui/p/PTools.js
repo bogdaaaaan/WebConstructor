@@ -1,9 +1,9 @@
 import {branch, DnDBuilder, item, useTools} from 'build-ui'
-import useStyle from './style/TextTools';
+import useStyle from './style/PTools';
 import TextFieldsIcon from '@material-ui/icons/TextFields';
 import clsx from 'clsx';
 
-const TextTools = ({
+const PTools = ({
     className,
     ...rest
 }) => {
@@ -14,20 +14,20 @@ const TextTools = ({
     );
     const tools = useTools();
     const handleDragTool = () => {
-        const textStyle = {
+        const pStyle = {
             color: '#000000',
             fontSize: 22,
             fontFamily: 'Arial',
         }
-        const textProps = {
-            text: 'My Text',
-            style: textStyle,
+        const pProps = {
+            text: 'My P Text',
+            style: pStyle,
         }
-        const text = item({
-            type: 'Text',
-            props: textProps
+        const p = item({
+            type: 'P',
+            props: pProps
         });
-        const data = branch(text);
+        const data = branch(p);
         tools.triggerDragStart({
             data: data
         })
@@ -41,8 +41,8 @@ const TextTools = ({
     >
         <TextFieldsIcon />
         <br></br>
-        Text
+        p
     </DnDBuilder>
 }
 
-export default TextTools;
+export default PTools;

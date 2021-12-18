@@ -1,11 +1,11 @@
 import {makeStyles} from "@material-ui/core/styles";
 import combineStyles from "../../../styles";
 import {fillStyles, flexStyles, positionStyles, sizingStyles} from "../../../styles/ui";
-import {textStyles} from './Text';
+import {spanStyles} from './Span';
 
-const textInputStyles = ({
-    textInput: props => ({
-        ...textStyles.text(props),
+const spanInputStyles = ({
+    spanInput: props => ({
+        ...spanStyles.span(props),
         resize: 'none',
         backgroundColor: 'transparent',
         border: 'none',
@@ -16,7 +16,7 @@ const textInputStyles = ({
 })
 
 const useStyle = makeStyles(combineStyles(
-    textInputStyles,
+    spanInputStyles,
     positionStyles,
     sizingStyles,
     flexStyles,

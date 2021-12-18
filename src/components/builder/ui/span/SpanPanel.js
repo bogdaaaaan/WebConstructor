@@ -1,7 +1,7 @@
 import TextField from '@material-ui/core/TextField';
 import useDemoEditor from '../../../../hooks/useDemoEditor';
 import useDemoStyler from '../../../../hooks/useDemoStyler';
-import useStyle from './style/TextPanel';
+import useStyle from './style/SpanPanel';
 import FontPanel from '../../panels/FontPanel';
 import {ColorPanel} from '../../panels/PalettePanel';
 import PositionPanel from '../../panels/PositionPanel';
@@ -9,7 +9,7 @@ import SpacingPanel from '../../panels/SpacingPanel';
 import FlexItemPanel from "../../panels/FlexItemPanel";
 import SizingPanel from '../../panels/SizingPanel';
 
-const TextPanel = ({
+const SpanPanel = ({
     id,
 }) => {
     const editor = useDemoEditor({
@@ -48,4 +48,4 @@ const TextPanel = ({
     </div> 
 }
 
-export default TextPanel;
+export default SpanPanel;

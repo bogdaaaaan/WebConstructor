@@ -2,7 +2,6 @@ import React from "react"
 import { Workspace } from "build-ui"
 import CanvasView from "./builder/ui/canvas/CanvasView"
 import SectionView from "./builder/ui/section/SectionView"
-import TextView from "./builder/ui/text/TextView"
 import ImageView from "./builder/ui/image/ImageView"
 import ButtonView from "./builder/ui/button/ButtonView"
 import GridView from "./builder/ui/grid/GridView"
@@ -12,6 +11,8 @@ import InputView from "./builder/ui/input/InputView"
 import DivView from "./builder/ui/div/DivView"
 import FormView from "./builder/ui/form/FormView"
 import HeaderView from "./builder/ui/header/HeaderView"
+import SpanView from "./builder/ui/span/SpanView"
+import PView from './builder/ui/p/PView'
 
 const DemoWorkspace = props => {
     const view = {
@@ -19,8 +20,9 @@ const DemoWorkspace = props => {
         Section: SectionView,
         Form: FormView,
         Div: DivView,
-        Text: TextView,
         Header: HeaderView,
+        Span: SpanView,
+        P: PView,
         Image: ImageView,
         Button: ButtonView,
         Grid: GridView,

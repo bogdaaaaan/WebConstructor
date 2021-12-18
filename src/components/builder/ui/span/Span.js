@@ -1,8 +1,8 @@
-import useStyle from './style/Text';
+import useStyle from './style/Span';
 import clsx from 'clsx';
 import React from 'react';
 
-const Text = React.forwardRef(({
+const Span = React.forwardRef(({
     children,
     className,
     style,
@@ -10,8 +10,8 @@ const Text = React.forwardRef(({
     ...props
 }, ref) => {
     const classes = useStyle(style);
-    const classText = clsx(
-        classes.text,
+    const classSpan = clsx(
+        classes.span,
         classes.fill,
     );
     const classAll = clsx(
@@ -21,15 +21,15 @@ const Text = React.forwardRef(({
     return <div
         className = {classAll}
     >
-        <p 
+        <span 
             ref = {ref}
-            className = {classText}
+            className = {classSpan}
             {...props}
         >
             {text}
-        </p>
+        </span>
         {children}
     </div>
 });
 
-export default Text;
+export default Span;

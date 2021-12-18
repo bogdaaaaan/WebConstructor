@@ -2,7 +2,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import combineStyles from "../../../styles";
 import {viewStyles} from "../../../styles/views";
 
-const textStyles = ({
+const spanStyles = ({
     view: ({
 
     }),
@@ -10,7 +10,7 @@ const textStyles = ({
 
 const useStyle = makeStyles(combineStyles(
     viewStyles,
-    textStyles,
+    spanStyles,
 ));
 
 export default useStyle;

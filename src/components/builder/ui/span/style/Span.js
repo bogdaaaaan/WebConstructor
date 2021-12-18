@@ -2,8 +2,8 @@ import {makeStyles} from "@material-ui/core/styles";
 import combineStyles from "../../../styles";
 import {fillStyles, flexStyles, positionStyles, sizingStyles} from "../../../styles/ui";
 
-export const textStyles = ({
-    text: props => ({
+export const spanStyles = ({
+    span: props => ({
         color: props.color,
         fontFamily: props.fontFamily,
         fontSize: props.fontSize,
@@ -15,7 +15,7 @@ export const textStyles = ({
 })
 
 const useStyle = makeStyles(combineStyles(
-    textStyles,
+    spanStyles,
     sizingStyles,
     positionStyles,
     flexStyles,

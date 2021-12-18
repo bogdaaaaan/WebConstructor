@@ -1,9 +1,9 @@
 import {branch, DnDBuilder, item, useTools} from 'build-ui'
-import useStyle from './style/HeaderTools';
+import useStyle from './style/SpanTools';
 import TextFieldsIcon from '@material-ui/icons/TextFields';
 import clsx from 'clsx';
 
-const HeaderTools = ({
+const SpanTools = ({
     className,
     ...rest
 }) => {
@@ -14,20 +14,20 @@ const HeaderTools = ({
     );
     const tools = useTools();
     const handleDragTool = () => {
-        const headerStyle = {
+        const spanStyle = {
             color: '#000000',
             fontSize: 22,
             fontFamily: 'Arial',
         }
-        const headerProps = {
-            text: 'My Header Text',
-            style: headerStyle,
+        const spanProps = {
+            text: 'My Span Text',
+            style: spanStyle,
         }
-        const header = item({
-            type: 'Header',
-            props: headerProps
+        const span = item({
+            type: 'Span',
+            props: spanProps
         });
-        const data = branch(header);
+        const data = branch(span);
         tools.triggerDragStart({
             data: data
         })
@@ -41,8 +41,8 @@ const HeaderTools = ({
     >
         <TextFieldsIcon />
         <br></br>
-        h1
+        span
     </DnDBuilder>
 }
 
-export default HeaderTools;
+export default SpanTools;
