@@ -20,7 +20,7 @@ const LinkTools = ({
         const linkProps = {
             text: 'Visit Repository',
             disabled: true,
-            href: 'https://github.com/LuisMPS/build-ui',
+            href: 'https://github.com/bogdaaaaan/WebConstructor',
             style: linkStyle,
         }
         const link = item({

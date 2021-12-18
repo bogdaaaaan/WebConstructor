@@ -5,6 +5,7 @@ import GridTools from "./builder/ui/grid/GridTools"
 import TextTools from "./builder/ui/text/TextTools"
 import ButtonTools from "./builder/ui/button/ButtonTools"
 import LinkTools from "./builder/ui/link/LinkTools"
+import InputTools from "./builder/ui/input/InputTools"
 import useStyle from "./style/ToolBar";
 import clsx from "clsx"
 
@@ -25,6 +26,8 @@ const ToolBar = props => {
         <AlertTools className = {classes.tool_item} />
         <ButtonTools className = {classes.tool_item} />
         <LinkTools className = {classes.tool_item} />
+        <InputTools className = {classes.tool_item}/>
+
     </div>;
 }
 

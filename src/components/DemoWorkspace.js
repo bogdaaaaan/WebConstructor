@@ -9,6 +9,7 @@ import GridView from "./builder/ui/grid/GridView"
 import BuilderSelector from "./BuilderSelector"
 import AlertView from "./builder/ui/alert/AlertView"
 import LinkView from "./builder/ui/link/LinkView"
+import InputView from "./builder/ui/input/InputView"
 
 const DemoWorkspace = props => {
     const view = {
@@ -20,6 +21,8 @@ const DemoWorkspace = props => {
         Grid: GridView,
         Alert: AlertView,
         Link: LinkView,
+        Input: InputView,
+        
     }
     // Render BuilderSelector,  
     // in charge of adding event
