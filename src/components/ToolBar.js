@@ -1,6 +1,7 @@
 import AlertTools from "./builder/ui/alert/AlertTools"
 import ImageTools from "./builder/ui/image/ImageTools"
 import SectionTools from "./builder/ui/section/SectionTools"
+import DivTools from "./builder/ui/div/DivTools"
 import GridTools from "./builder/ui/grid/GridTools"
 import TextTools from "./builder/ui/text/TextTools"
 import ButtonTools from "./builder/ui/button/ButtonTools"
@@ -20,6 +21,7 @@ const ToolBar = props => {
         className = {classAll}
     >
         <SectionTools className = {classes.tool_item} />
+        <DivTools className = {classes.tool_item} />
         <GridTools className = {classes.tool_item} />
         <TextTools className = {classes.tool_item} />
         <ImageTools className = {classes.tool_item} />

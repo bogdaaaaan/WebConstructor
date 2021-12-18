@@ -6,6 +6,7 @@ const DemoLayers = () => {
     const view = {
         Canvas: LayerDroppable,
         Section: LayerDroppable,
+        Div: LayerDroppable,
         Alert: LayerDraggable,
         Image: LayerDraggable,
         Text: LayerDraggable,

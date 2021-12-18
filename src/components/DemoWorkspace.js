@@ -10,11 +10,13 @@ import BuilderSelector from "./BuilderSelector"
 import AlertView from "./builder/ui/alert/AlertView"
 import LinkView from "./builder/ui/link/LinkView"
 import InputView from "./builder/ui/input/InputView"
+import DivView from "./builder/ui/div/DivView"
 
 const DemoWorkspace = props => {
     const view = {
         Canvas: CanvasView,
         Section: SectionView,
+        Div: DivView,
         Text: TextView,
         Image: ImageView,
         Button: ButtonView,
