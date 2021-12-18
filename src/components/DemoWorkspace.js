@@ -7,7 +7,6 @@ import ImageView from "./builder/ui/image/ImageView"
 import ButtonView from "./builder/ui/button/ButtonView"
 import GridView from "./builder/ui/grid/GridView"
 import BuilderSelector from "./BuilderSelector"
-import AlertView from "./builder/ui/alert/AlertView"
 import LinkView from "./builder/ui/link/LinkView"
 import InputView from "./builder/ui/input/InputView"
 import DivView from "./builder/ui/div/DivView"
@@ -21,7 +20,6 @@ const DemoWorkspace = props => {
         Image: ImageView,
         Button: ButtonView,
         Grid: GridView,
-        Alert: AlertView,
         Link: LinkView,
         Input: InputView,
         

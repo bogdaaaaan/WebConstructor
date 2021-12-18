@@ -7,7 +7,6 @@ const DemoLayers = () => {
         Canvas: LayerDroppable,
         Section: LayerDroppable,
         Div: LayerDroppable,
-        Alert: LayerDraggable,
         Image: LayerDraggable,
         Text: LayerDraggable,
         Button: LayerDraggable,
