@@ -1,52 +1,10 @@
-
+import { styles } from './style/MainMenu';
 import { Card, Button, CardContent, CardActions } from "@material-ui/core";
 import DemoBuilder from './DemoBuilder';
 import BuilderGrid from './layout/BuilderGrid';
 import { generateKey } from '../utils/unique.js';
 import { useState, useRef, useEffect } from "react";
-
-const styles = {
-    card: {
-        maxWidth: '300px',
-        marginTop: '25px',
-        border: '1px solid black'
-    },
-    card_holder: {
-        maxHeight: '600px',
-        overflowY: 'scroll',
-        boxSizing: 'border-box',
-        width: '100%',
-        maxWidth: '1200px',
-        padding: '0 25px',
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    wrapper: {
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        background: '#fff'
-    },
-    wrapper_center: {
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        background: '#fff',
-        justifyContent: 'center'
-    },
-    btn: {
-        background: '#000',
-        color: '#fff'
-    }
-    
-};
+import Delete from '@material-ui/icons/Delete';
 
 const MainMenu = () => {
     const inputFile = useRef(null) 
@@ -65,6 +23,20 @@ const MainMenu = () => {
 
     const load_storage = () => {
         setLocalLayouts(pages);
+    }
+
+    const delete_from_storage = (root) => {
+        let copy_pages = [];
+        for (let i = 0; i < pages.length; i++) {
+            if (JSON.parse(pages[i].layout).root !== root) {
+                copy_pages.push(pages[i]);
+            }
+        }
+
+        localStorage.setItem('pages', JSON.stringify([...copy_pages]));
+        setPages([...copy_pages]);
+        setLocalLayouts([...copy_pages]);
+        
     }
 
     const handleLoad = (e) => { 
@@ -89,7 +61,7 @@ const MainMenu = () => {
                     <h1>WEB CONSTRUCTOR</h1>
                     <Button onClick={create_new}>Create New Project</Button>
                     <Button onClick={load_file}>Load Project From File</Button>
-                    {pages ? <Button onClick={load_storage}>Load Project From Backups</Button> : ''}
+                    {pages.length ? <Button onClick={load_storage}>Load Project From Backups</Button> : ''}
                     
                     {localLayouts ? <div style={styles.card_holder}>
                         {localLayouts.map((el, indx) => {
@@ -102,8 +74,9 @@ const MainMenu = () => {
                                             <div>Last change: {time}</div>
                                             
                                         </CardContent>
-                                        <CardActions>
-                                            <Button style={styles.btn} onClick={() => setLayout(layout)}>Select this project</Button>
+                                        <CardActions style={styles.actions}>
+                                            <Button style={styles.btn} onClick={() => setLayout(layout)}>Select </Button>
+                                            <Button style={styles.btn} onClick={() => delete_from_storage(layout.root)}><Delete/></Button>
                                         </CardActions>
                                     </Card>
                                 )
