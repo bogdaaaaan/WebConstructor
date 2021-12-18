@@ -12,6 +12,7 @@ const DemoLayers = () => {
         Button: LayerDraggable,
         Link: LayerDraggable,
         Grid: LayerDroppable,
+        Input: LayerDraggable
     }
     return <Layers view = {view} />
 }
