@@ -16,7 +16,7 @@ const Header = ({
         {...props}
     >
         <p className = {classes.title}>
-            Build UI Demo
+            WebConstructor 
         </p>
     </header>
 }
