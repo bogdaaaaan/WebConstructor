@@ -4,7 +4,7 @@ import {viewStyles} from '../../../styles/views';
 
 const canvasStyles = ({
     view: ({
-        overflow: 'auto',
+        overflow: 'hidden',
     }),
 });
 

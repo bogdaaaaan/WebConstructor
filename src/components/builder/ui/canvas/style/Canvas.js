@@ -6,7 +6,6 @@ const canvasStyles = ({
         width: props.width ? props.width : '100%',
         height: props.height ? props.height : '100%',
         position: 'relative',
-        overflow: 'auto',
         backgroundColor: props.backgroundColor,
     }),
 })

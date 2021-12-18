@@ -6,10 +6,17 @@ export const workspaceStyles = theme => ({
         [theme.breakpoints.up('md')]: ({
             height: '100%',
             width: '100%',
+            overflow: 'auto',
         }),
         [theme.breakpoints.down('md')]: ({
-            height: 600,
+            height: 1200,
             width: '100%',
+            overflow: 'auto',
+        }),
+        [theme.breakpoints.down('lg')]: ({
+            height: 1000,
+            width: '100%',
+            overflow: 'auto',
         }),
     })
 })
