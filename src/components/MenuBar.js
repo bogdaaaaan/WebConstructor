@@ -41,9 +41,24 @@ const MenuBar = ({
         const content = JSON.stringify(json());
         const file = new Blob([content], { type: 'application/json' });
         const link = URL.createObjectURL(file);
+
+        // set localStorage
+        let time = new Date().toLocaleString();
         let pages = JSON.parse(localStorage.getItem('pages'));
         if (!pages) pages = [];
-        localStorage.setItem('pages', JSON.stringify([...pages, content]));
+
+        let flag = false;
+        for (let i = 0; i < pages.length; i++) {
+            let layout = JSON.parse(pages[i].layout);
+            let root = JSON.parse(content).root;
+            if (layout.root === root) {
+                pages[i].layout = content;
+                pages[i].time = time;
+                flag = true;
+            }
+        }
+        flag ? localStorage.setItem('pages', JSON.stringify([...pages])) : localStorage.setItem('pages', JSON.stringify([...pages, {layout: content, time: time}]));
+    
         setSaveLink(link);
         setSaving(true);
     }

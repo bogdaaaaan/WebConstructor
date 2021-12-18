@@ -1,6 +1,4 @@
 import { Builder, item, branch } from "build-ui";
-// import Demo from './builder/templates/demo';
-// import Demo from './builder/templates/demo2'
 
 const DemoBuilder = ({
     children,

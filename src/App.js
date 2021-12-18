@@ -1,6 +1,15 @@
 import MainMenu from './components/MainMenu';
 import { useEffect } from 'react';
 
+const styles = {
+    wrapper: {
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
+}
+
 const App = () => {
     useEffect(() => {
         window.addEventListener('beforeunload', alertUser);
@@ -14,10 +23,8 @@ const App = () => {
     };
 
     return (
-        <div>
-          <MainMenu>
-            
-          </MainMenu>
+        <div style={styles.wrapper}>
+          <MainMenu/>
         </div>
     );
 };
