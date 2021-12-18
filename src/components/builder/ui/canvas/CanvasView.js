@@ -17,7 +17,7 @@ const CanvasView = ({
     const classes = useStyle({
         selected: editor.indexes.selected,
         hovering: editor.hovering,
-        fixed: true,
+        
     });
     const ref = useRef();
     useExtractor(id, ref);

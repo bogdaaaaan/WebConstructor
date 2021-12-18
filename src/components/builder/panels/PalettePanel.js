@@ -2,6 +2,8 @@ import Input from "@material-ui/core/Input";
 import clsx from "clsx";
 import useDemoEditor from "../../../hooks/useDemoEditor";
 import useStyle from "./style/Panel";
+import SizingPanel from "./SizingPanel";
+import PositionPanel from "./PositionPanel";
 
 const ColorPanel = ({
     id,
@@ -76,6 +78,7 @@ const BackgroundPanel = ({
         />
         </div>
 
+        <SizingPanel id = {id} />
     </div>
 }
 
