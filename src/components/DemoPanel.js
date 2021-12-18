@@ -9,11 +9,13 @@ import GridPanel from "./builder/ui/grid/GridPanel";
 import InputPanel from "./builder/ui/input/InputPanel";
 import DivPanel from "./builder/ui/div/DivPanel";
 import FormPanel from "./builder/ui/form/FormPanel";
+import HeaderPanel from "./builder/ui/header/HeaderPanel";
 
 const DemoPanel = props => {
     const view = {
         Canvas: CanvasPanel,
         Text: TextPanel,
+        Header: HeaderPanel,
         Section: SectionPanel,
         Div: DivPanel,
         Form: FormPanel,

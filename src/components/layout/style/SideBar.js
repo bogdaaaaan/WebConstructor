@@ -21,7 +21,7 @@ export const sidebarStyles = theme => ({
     layers: ({
         [theme.breakpoints.up('md')]: ({
             // minHeight: '50%',
-            height: '50%',
+            height: '100%',
             overflow: 'auto'
         }),
     }),

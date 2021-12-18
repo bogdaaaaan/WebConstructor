@@ -10,6 +10,7 @@ const DemoLayers = () => {
         Form: LayerDroppable,
         Image: LayerDraggable,
         Text: LayerDraggable,
+        Header: LayerDraggable,
         Button: LayerDraggable,
         Link: LayerDraggable,
         Grid: LayerDroppable,

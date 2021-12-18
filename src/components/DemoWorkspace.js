@@ -11,6 +11,7 @@ import LinkView from "./builder/ui/link/LinkView"
 import InputView from "./builder/ui/input/InputView"
 import DivView from "./builder/ui/div/DivView"
 import FormView from "./builder/ui/form/FormView"
+import HeaderView from "./builder/ui/header/HeaderView"
 
 const DemoWorkspace = props => {
     const view = {
@@ -19,6 +20,7 @@ const DemoWorkspace = props => {
         Form: FormView,
         Div: DivView,
         Text: TextView,
+        Header: HeaderView,
         Image: ImageView,
         Button: ButtonView,
         Grid: GridView,
