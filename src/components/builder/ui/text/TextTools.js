@@ -40,6 +40,8 @@ const TextTools = ({
         {...rest}
     >
         <TextFieldsIcon />
+        <br></br>
+        Text
     </DnDBuilder>
 }
 

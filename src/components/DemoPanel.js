@@ -8,6 +8,7 @@ import LinkPanel from "./builder/ui/link/LinkPanel";
 import GridPanel from "./builder/ui/grid/GridPanel";
 import InputPanel from "./builder/ui/input/InputPanel";
 import DivPanel from "./builder/ui/div/DivPanel";
+import FormPanel from "./builder/ui/form/FormPanel";
 
 const DemoPanel = props => {
     const view = {
@@ -15,6 +16,7 @@ const DemoPanel = props => {
         Text: TextPanel,
         Section: SectionPanel,
         Div: DivPanel,
+        Form: FormPanel,
         Image: ImagePanel,
         Button: ButtonPanel,
         Link: LinkPanel,

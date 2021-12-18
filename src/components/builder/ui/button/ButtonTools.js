@@ -37,6 +37,8 @@ const ButtonTools = ({
         {...rest}
     >
         <VignetteIcon />
+        <br></br>
+        Button
     </DnDBuilder>
 }
 

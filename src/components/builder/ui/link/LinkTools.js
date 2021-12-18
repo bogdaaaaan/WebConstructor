@@ -40,6 +40,8 @@ const LinkTools = ({
         {...rest}
     >
         <LinkIcon />
+        <br></br>
+        Link
     </DnDBuilder>
 }
 

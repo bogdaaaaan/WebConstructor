@@ -37,6 +37,8 @@ const InputTools = ({
         {...rest}
     >
         <Input />
+        <br></br>
+        Input
     </DnDBuilder>
 }
 

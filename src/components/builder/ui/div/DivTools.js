@@ -39,6 +39,8 @@ const DivTools = ({
         {...rest}
     >
         <DashboardTwoTone />
+        <br></br>
+        Div
     </DnDBuilder>
 }
 

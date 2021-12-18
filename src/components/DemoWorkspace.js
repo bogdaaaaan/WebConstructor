@@ -10,11 +10,13 @@ import BuilderSelector from "./BuilderSelector"
 import LinkView from "./builder/ui/link/LinkView"
 import InputView from "./builder/ui/input/InputView"
 import DivView from "./builder/ui/div/DivView"
+import FormView from "./builder/ui/form/FormView"
 
 const DemoWorkspace = props => {
     const view = {
         Canvas: CanvasView,
         Section: SectionView,
+        Form: FormView,
         Div: DivView,
         Text: TextView,
         Image: ImageView,

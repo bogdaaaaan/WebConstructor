@@ -39,6 +39,8 @@ const ImageTools = ({
         {...rest}
     >
         <ImageIcon />
+        <br></br>
+        Image
     </DnDBuilder>
 }
 

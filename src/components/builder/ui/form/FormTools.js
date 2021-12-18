@@ -1,9 +1,9 @@
 import { branch, DnDBuilder, item, useTools } from 'build-ui'
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import useStyle from './style/SectionTools';
+import DynamicFeed from '@material-ui/icons/DynamicFeed';
+import useStyle from './style/FormTools';
 import clsx from 'clsx';
 
-const SectionTools = ({
+const FormTools = ({
     className,
     ...rest
 }) => {
@@ -14,19 +14,19 @@ const SectionTools = ({
     );
     const tools = useTools();
     const handleDragTool = () => {
-        const sectionStyle = {
+        const formStyle = {
             width: 400,
             height: 200,
             backgroundColor: '#fafafa',
         }
-        const sectionProps = {
-            style: sectionStyle,
+        const formProps = {
+            style: formStyle,
         }
-        const section = item({
-            type: 'Section',
-            props: sectionProps
+        const form = item({
+            type: 'Form',
+            props: formProps
         })
-        const data = branch(section);
+        const data = branch(form);
         tools.triggerDragStart({
             data: data,
         });
@@ -38,10 +38,10 @@ const SectionTools = ({
         className={classAll}
         {...rest}
     >
-        <CheckBoxOutlineBlankIcon />
+        <DynamicFeed/>
         <br></br>
-        Section
+        Form
     </DnDBuilder>
 }
 
-export default SectionTools;
+export default FormTools;

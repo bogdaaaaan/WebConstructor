@@ -37,6 +37,8 @@ const GridTools = ({
         {...rest}
     >
         <GridIcon />
+        <br></br>
+        Grid
     </DnDBuilder>
 }
 
