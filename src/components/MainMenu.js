@@ -8,7 +8,9 @@ import Delete from '@material-ui/icons/Delete';
 
 const MainMenu = () => {
     const inputFile = useRef(null) 
-    const [pages, setPages] = useState(JSON.parse(localStorage.getItem('pages')));
+    let _pages = JSON.parse(localStorage.getItem('pages'));
+
+    const [pages, setPages] = useState(_pages?.length ? _pages : []);
     const [clicked, setClicked] = useState('');
     const [layout, setLayout] = useState('');
     const [localLayouts, setLocalLayouts] = useState('');
