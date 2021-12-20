@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/WebConstructor/static/css/main.3d03131e.chunk.css",
-    "main.js": "/WebConstructor/static/js/main.53244d40.chunk.js",
-    "main.js.map": "/WebConstructor/static/js/main.53244d40.chunk.js.map",
+    "main.js": "/WebConstructor/static/js/main.04028af3.chunk.js",
+    "main.js.map": "/WebConstructor/static/js/main.04028af3.chunk.js.map",
     "runtime-main.js": "/WebConstructor/static/js/runtime-main.36553021.js",
     "runtime-main.js.map": "/WebConstructor/static/js/runtime-main.36553021.js.map",
-    "static/js/2.a2a488ef.chunk.js": "/WebConstructor/static/js/2.a2a488ef.chunk.js",
-    "static/js/2.a2a488ef.chunk.js.map": "/WebConstructor/static/js/2.a2a488ef.chunk.js.map",
+    "static/js/2.6cf237fb.chunk.js": "/WebConstructor/static/js/2.6cf237fb.chunk.js",
+    "static/js/2.6cf237fb.chunk.js.map": "/WebConstructor/static/js/2.6cf237fb.chunk.js.map",
     "index.html": "/WebConstructor/index.html",
     "static/css/main.3d03131e.chunk.css.map": "/WebConstructor/static/css/main.3d03131e.chunk.css.map",
-    "static/js/2.a2a488ef.chunk.js.LICENSE.txt": "/WebConstructor/static/js/2.a2a488ef.chunk.js.LICENSE.txt"
+    "static/js/2.6cf237fb.chunk.js.LICENSE.txt": "/WebConstructor/static/js/2.6cf237fb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.36553021.js",
-    "static/js/2.a2a488ef.chunk.js",
+    "static/js/2.6cf237fb.chunk.js",
     "static/css/main.3d03131e.chunk.css",
-    "static/js/main.53244d40.chunk.js"
+    "static/js/main.04028af3.chunk.js"
   ]
 }
