@@ -83,7 +83,6 @@ const FormPanel = ({
 
         {styler.styles.flexItem && <FlexItemPanel id = {id} />}
         <FlexContainerPanel id = {id} />        
-        <SizingPanel id = {id} />
         <PositionPanel id = {id} />
 
     </div>

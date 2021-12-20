@@ -1,10 +1,13 @@
 import { DnDBuilderHOC } from "build-ui";
+import Resizable from "../../../resize/Resizable";
 import Button from "./Button";
 import useDemoEditor from "../../../../hooks/useDemoEditor";
 import useDemoStyler from "../../../../hooks/useDemoStyler";
 import useStyle from './style/ButtonView';
 
-const BuilderButton = DnDBuilderHOC(Button);
+
+const ResizableButton = Resizable(Button);
+const BuilderButton = DnDBuilderHOC(ResizableButton);
 
 const ButtonView = ({
     id,
@@ -25,6 +28,15 @@ const ButtonView = ({
         onDragStart={!editor.meta.fixed && editor.handlePositionedDragStart}
         onDragEnd={!editor.meta.fixed && editor.handleDragEnd}
         draggable={!editor.meta.fixed}
+        // Resize Props
+        isResizing = {editor.indexes.selected}
+        onResizeStart = {editor.handleResizeStart}
+        onResize = {editor.handleResize}
+        onResizeEnd = {editor.handleResizeEnd}
+        // Pass down ref for
+        // resize numerical 
+        // calculations
+        ref = {editor.builder}
         // Other Props
         onClick={editor.handleSelect}
         className={classes.view}

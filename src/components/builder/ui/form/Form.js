@@ -14,7 +14,7 @@ const Form = React.forwardRef(({
         classes.ui,
         classes.position,
     );
-    return <form 
+    return <div
         className = {classAll}
         ref = {ref}
         {...props}

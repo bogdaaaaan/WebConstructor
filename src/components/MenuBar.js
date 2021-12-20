@@ -5,11 +5,16 @@ import Button from "@material-ui/core/Button";
 import clsx from "clsx";
 import useExporter from "../hooks/useExporter";
 import useStyle from "./style/MenuBar";
+import { FileManager } from "./FileManager";
+import { BuilderLogic } from "./BuilderLogic";
 
 const MenuBar = ({
     className,
     ...props
 }) => {
+    const fileManager = new FileManager();
+    const builderLogic = new BuilderLogic();
+
     const builder = useBuilder();
     const exporter = useExporter();
 
@@ -26,7 +31,6 @@ const MenuBar = ({
 
     const [file, setFile] = useState(null);
 
-    // console.log(builder.history);
     const {
         handleRedo,
         handleUndo,
@@ -36,41 +40,8 @@ const MenuBar = ({
         canUndo,
     } = builder;
 
-    const handleSave = () => {
-        // console.log(json());
-        const content = JSON.stringify(json());
-        const file = new Blob([content], { type: 'application/json' });
-        const link = URL.createObjectURL(file);
-
-        // set localStorage
-        let time = new Date().toLocaleString();
-        let pages = JSON.parse(localStorage.getItem('pages'));
-        if (!pages) pages = [];
-
-        let flag = false;
-        for (let i = 0; i < pages.length; i++) {
-            let layout = JSON.parse(pages[i].layout);
-            let root = JSON.parse(content).root;
-            if (layout.root === root) {
-                pages[i].layout = content;
-                pages[i].time = time;
-                flag = true;
-            }
-        }
-        flag ? localStorage.setItem('pages', JSON.stringify([...pages])) : localStorage.setItem('pages', JSON.stringify([...pages, {layout: content, time: time}]));
-    
-        setSaveLink(link);
-        setSaving(true);
-    }
-
-    const handleLoad = event => {
-        const file = event.target.files[0];
-        // Must manage with effect
-        // since reading file
-        // will be done async.
-        setFile(file);
-    }
-
+    const handleSave = () => builderLogic.handleSave(fileManager, json, setSaveLink, setSaving);
+    const handleLoad = event => builderLogic.handleLoad(event, setFile);
     const handleExport = () => {
         exporter.handleExport();
         setExporting(true);
@@ -80,14 +51,13 @@ const MenuBar = ({
         if (!saving) return;
         saver.current.click();
         URL.revokeObjectURL(saveLink);
-        // setLink(null);
         setSaving(false);
     }, [saving, saveLink]);
 
     useEffect(() => {
         if (!file) return;
         const content = file.text();
-        content.then(text => JSON.parse(text))
+        content.then(text => fileManager.parseJson(text))
             .then(tree => batch(() => {
                 loadTree(tree);
                 setFile(null);
@@ -106,7 +76,7 @@ const MenuBar = ({
         }
         if (html) {
             const formatHTML = html => (
-                `<html><head> ${css ? '<style>'+ css + '</style>' : ''}</head><body> ${html} </body></html>`
+                `<html><head><style> ${css} </style> </head><body> ${html} </body></html>`
             );
             const formattedHTML = formatHTML(html);
             const file = new Blob([formattedHTML], { type: 'text/html' });

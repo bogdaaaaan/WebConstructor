@@ -5,49 +5,33 @@ import BuilderGrid from './layout/BuilderGrid';
 import { generateKey } from '../utils/unique.js';
 import { useState, useRef, useEffect } from "react";
 import Delete from '@material-ui/icons/Delete';
+import { FileManager } from './FileManager';
 
 const MainMenu = () => {
+    const fileManager = new FileManager();
     const inputFile = useRef(null) 
-    let _pages = JSON.parse(localStorage.getItem('pages'));
 
-    const [pages, setPages] = useState(_pages?.length ? _pages : []);
+    const [pages, setPages] = useState(fileManager.getLocalStorage());
     const [clicked, setClicked] = useState('');
     const [layout, setLayout] = useState('');
     const [localLayouts, setLocalLayouts] = useState('');
 
-    const create_new = () => {
-        setClicked('new');
-    }
-
-    const load_file = () => {
-        inputFile.current.click();
-    }
-
-    const load_storage = () => {
-        setLocalLayouts(pages);
-    }
+    const create_new = () => setClicked('new');
+    const load_file = () => inputFile.current.click();
+    const load_storage = () => setLocalLayouts(pages);
 
     const delete_from_storage = (root) => {
-        let copy_pages = [];
-        for (let i = 0; i < pages.length; i++) {
-            if (JSON.parse(pages[i].layout).root !== root) {
-                copy_pages.push(pages[i]);
+        let copy = pages.filter((el) => {
+            if (fileManager.parseJson(el.layout).root !== root) {
+                return el;
             }
-        }
-
-        localStorage.setItem('pages', JSON.stringify([...copy_pages]));
-        setPages([...copy_pages]);
-        setLocalLayouts([...copy_pages]);
-        
+        })
+        fileManager.setLocalStorage(copy);
+        setPages(copy);
+        setLocalLayouts(copy);       
     }
 
-    const handleLoad = (e) => { 
-        const fileReader = new FileReader();
-        fileReader.readAsText(e.target.files[0], "UTF-8");
-        fileReader.onload = e => {
-            setLayout(JSON.parse(e.target.result));
-        };
-    }
+    const handleLoad = (e) => fileManager.handleLoad(e, setLayout);
 
     useEffect(() => {
         if (layout) {
