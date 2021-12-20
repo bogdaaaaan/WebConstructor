@@ -57,7 +57,7 @@ const MenuBar = ({
     useEffect(() => {
         if (!file) return;
         const content = file.text();
-        content.then(text => fileManager.parseJson(text))
+        content.then(text => JSON.parse(text))
             .then(tree => batch(() => {
                 loadTree(tree);
                 setFile(null);
